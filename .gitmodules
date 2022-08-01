@@ -1,0 +1,3 @@
+[submodule "blockchains-in-go"]
+	path = blockchains-in-go
+	url = https://github.com/Liberontissauri/blockchains-in-go
