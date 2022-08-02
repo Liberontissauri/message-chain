@@ -10,9 +10,11 @@ const {Base64} = require('js-base64');
 const BLOCKCHAIN_SERVER_ADDRESS = 'http://localhost:8080'
 
 export default function Home() {
+  const [gochain, setGochain] = useState(null)
   const [blocks, setBlocks] = useState([]);
+  const wasmModule = import('../bin/gochain.wasm')
 
-  useEffect(() => {
+  useEffect(async () => {
     axios.get(BLOCKCHAIN_SERVER_ADDRESS + '/api/blocks').then(res => setBlocks(res.data.blocks)).catch(err => console.log(err))
   })
     
